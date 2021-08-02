@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+img{
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+}
+.titulo{
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 80px 0;
+}
+
+.contenedor-galeria{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 40px;
+}
+.caja-galeria{
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+}
+.caja-galeria:hover .overlay{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.caja-galeria .overlay{
+    background-color: #000000aa;
+    color: #FFFFFE;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(30%);
+    opacity: 0;
+    transition: transform .4s;
+}
+.caja-galeria .overlay h3{
+    font-size: 24px;
+    transform: translateY(500%);
+    transition: transform .7s;
+}
+.caja-galeria .overlay p{
+    font-size: 16px;
+    transform: translateY(700%);
+    transition: transform .9s;
+}
+
+.caja-galeria:hover .overlay h3,
+.caja-galeria:hover .overlay p{
+    transform: translateY(0);
+}
